@@ -1,0 +1,14 @@
+# Entornos virtuales
+venv/
+env/
+
+# Archivos cacheados de Python
+__pycache__/
+*.py[cod]
+
+# Base de datos local
+*.db
+mi_app.db
+
+# Variables de entorno
+.env
