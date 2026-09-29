@@ -1,14 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# Cuando levantes tu contenedor de Postgres, cambiaremos esta URL por:
-# SQLALCHEMY_DATABASE_URL = "postgresql://usuario:password@localhost:5432/mi_base"
-SQLALCHEMY_DATABASE_URL = "sqlite:///./mi_app.db"
+# URL de conexión a Postgres (coincide con los datos del docker-compose)
+SQLALCHEMY_DATABASE_URL = "postgresql+psycopg2://admin:adminpassword@localhost:5433/fastapi_db"
 
-# connect_args={"check_same_thread": False} es una configuración exclusiva de SQLite
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
+# Engine para Postgres (eliminamos el connect_args exclusivo de SQLite)
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
