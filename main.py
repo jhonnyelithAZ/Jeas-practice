@@ -18,7 +18,7 @@ def get_db():
 
 @app.get("/")
 def leer_raiz():
-    return {"mensaje": "¡Base de datos conectada y servidor funcionando!"}
+    return {"mensaje": "¡Base de datos anal...izada y servidor funcionando!"}
 
 # --- NUEVOS ENDPOINTS ---
 
